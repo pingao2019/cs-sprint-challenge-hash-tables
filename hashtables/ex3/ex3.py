@@ -3,9 +3,20 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
-
+    result=[]
+    
+    numbers = {}
+    
+    for item in arrays[0]:
+        numbers[item] = 1
+    for arr in arrays[1:]:
+        for item in arr:
+            if item in numbers:
+                numbers[item] += 1
+    for number in numbers:
+        if numbers[number] == len(arrays):
+            result.append(number)
     return result
-
 
 if __name__ == "__main__":
     arrays = []
